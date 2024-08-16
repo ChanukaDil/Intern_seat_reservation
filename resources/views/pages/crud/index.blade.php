@@ -14,7 +14,7 @@
                             <input class="form-control " type="text" placeholder="Enter Username" name = "Username">
                         </div><br/>
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Enter Password" name = "Password">
+                            <input class="form-control" type="password" placeholder="Enter Password" name = "Password">
                         </div></br>
                         <div class="form-group">
                             <input class="form-control" type="text" placeholder="Enter Email Address" name = "Email">
