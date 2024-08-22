@@ -40,7 +40,7 @@
                             <input class="form-control" type="text" placeholder="Enter University ID" name = "Uni_ID">
                         </div><br/>
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Enter your position" name = "Position">
+                            <input class="form-control" type="text" placeholder="Enter your specialisation" name = "Position">
                         </div><br/>
                         <div>
                             <button class = "btn btn-primary d-flex justify-content-center">Submit</button>
