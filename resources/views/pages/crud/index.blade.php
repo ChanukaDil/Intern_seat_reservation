@@ -14,7 +14,7 @@
                             <input class="form-control " type="text" placeholder="Enter Username" name = "Username">
                         </div><br/>
                         <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Enter Password" name = "Password">
+                            <input class="form-control" type="password" placeholder="Enter Password" name = "Password">
                         </div></br>
                         <div class="form-group">
                             <input class="form-control" type="text" placeholder="Enter Email Address" name = "Email">
@@ -22,9 +22,6 @@
                         <div class="form-group">
                             <input class="form-control" type="text" placeholder="Enter NIC Number" name = "NIC">
                         </div></br>
-                        <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Enter SLT ID" name = "SLT_ID">
-                        </div><br/>
                         <div class="form-group">
                             <input class="form-control" type="text" placeholder="Enter Birth Year" name = "Birth">
                         </div><br/>
