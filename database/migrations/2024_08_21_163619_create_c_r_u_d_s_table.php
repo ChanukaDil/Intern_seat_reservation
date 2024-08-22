@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('password');
             $table->string('email');
             $table->string('nic');
-            $table->string('slt_id');
             $table->year('birth');
             $table->string('university')->default('IIT');
             $table->string('uni_id');
@@ -35,3 +34,14 @@ return new class extends Migration
         Schema::dropIfExists('c_r_u_d_s');
     }
 };
+
+
+
+
+
+
+
+
+
+
+

@@ -14,7 +14,6 @@ class CRUD extends Model
         'Password',
         'Email',
         'NIC',
-        'SLT_ID',
         'Birth',
         'university',
         'Uni_ID',
@@ -32,3 +31,4 @@ class CRUD extends Model
         $this->attributes['password'] = bcrypt($value);
     }
 }
+
