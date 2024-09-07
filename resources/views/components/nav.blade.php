@@ -11,7 +11,7 @@
           <a class="nav-link active" aria-current="page" href="{{ route('crud') }}">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Log in</a>
+          <a class="nav-link" href="{{ route('Reservation') }}" >Reservation</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Home</a>

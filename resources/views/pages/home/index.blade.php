@@ -81,7 +81,7 @@
                       </div>
 
                       <div class="pt-1 mb-4">
-                        <button data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-lg btn-block" type="button">Login</button>
+                        <button data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-lg btn-block"type="button"><a href="{{ route('Reservation') }}"> Login</a></button>
                       </div>
 
                       <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
@@ -143,10 +143,6 @@
             padding-top : 8vh;
             font-size : 4rem;
             color : red;
-
-
         }
     </style>
-
-
 @endpush
