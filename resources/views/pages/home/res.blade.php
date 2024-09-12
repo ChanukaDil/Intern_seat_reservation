@@ -284,22 +284,12 @@
                 <div class="date">17</div>
               </label>
             </div>
-            <div class="times">
-              <input type="radio" name="time" id="t1" checked />
-              <label for="t1" class="time">11:00</label>
-              <input type="radio" id="t2" name="time" />
-              <label for="t2" class="time"> 14:30 </label>
-              <input type="radio" id="t3" name="time" />
-              <label for="t3" class="time"> 18:00 </label>
-              <input type="radio" id="t4" name="time" />
-              <label for="t4" class="time"> 21:30 </label>
-            </div>
+
           </div>
         </div>
         <div class="price">
           <div class="total">
-            <span> <span class="count">0</span> Tickets </span>
-            <div class="amount">0</div>
+
           </div>
           <button type="button">Book</button>
         </div>

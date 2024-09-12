@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\CRUD; // Import the CRUD model
+use Illuminate\Support\Facades\Hash;
+
 
 class HomeController extends Controller
 {
@@ -15,4 +19,11 @@ class HomeController extends Controller
 
         return view('pages.home.res');
     }
+    public function login(){
+
+        return view('login');
+    }
+
 }
+
+
