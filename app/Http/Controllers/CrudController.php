@@ -23,4 +23,5 @@ class CrudController extends Controller
 
 
     }
+    
 }

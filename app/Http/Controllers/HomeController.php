@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\CRUD; // Import the CRUD model
+use App\Models\CRUD;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -22,6 +22,10 @@ class HomeController extends Controller
     public function login(){
 
         return view('login');
+    }
+    public function Aboutus(){
+
+        return view('Aboutus');
     }
 
 }

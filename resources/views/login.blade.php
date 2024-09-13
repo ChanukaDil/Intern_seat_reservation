@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('content')
 
 <section class="vh-100"  style="background-color: black;">
     <div class="container-fluid">
@@ -44,3 +45,4 @@
       </div>
     </div>
   </section>
+  @endsection

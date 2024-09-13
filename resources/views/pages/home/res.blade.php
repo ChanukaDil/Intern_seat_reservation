@@ -22,6 +22,7 @@
         height: 100vh;
         margin: 0;
         padding: 0;
+        font-family: 'Poppins', sans-serif;
       }
       .center {
         width: 100%;
@@ -47,6 +48,10 @@
         overflow: auto;
         background: white;
         box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+        transition: transform 0.3s ease;
+      }
+      .tickets:hover {
+        transform: translateY(-5px);
       }
       .ticket-selector {
         background: rgb(243, 243, 243);
@@ -56,6 +61,7 @@
         flex-direction: column;
         box-sizing: border-box;
         padding: 20px;
+        border-radius: 5mm;
       }
       .head {
         width: 100%;
@@ -65,8 +71,10 @@
         margin-bottom: 30px;
       }
       .title {
-        font-size: 16px;
-        font-weight: 600;
+        font-size: 18px;
+        font-weight: 700;
+        color: #2d2d2d;
+        letter-spacing: 1px;
       }
       .seats {
         width: 100%;
@@ -82,6 +90,7 @@
         display: flex;
         align-items: center;
         justify-content: space-evenly;
+        margin-bottom: 15px;
       }
       .seats::before {
         content: "";
@@ -98,6 +107,7 @@
       .item {
         font-size: 12px;
         position: relative;
+        color: #333;
       }
       .item::before {
         content: "";
@@ -134,6 +144,11 @@
         border-radius: 0.5mm;
         outline: 0.3mm solid rgb(180, 180, 180);
         cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .seat:hover {
+        outline-color: #4caf50;
+        transform: scale(1.1);
       }
       .all-seats input:checked + label {
         background: rgb(28, 185, 120);
@@ -142,6 +157,7 @@
       .seat.booked {
         background: rgb(180, 180, 180);
         outline: none;
+        cursor: not-allowed;
       }
       input {
         display: none;
@@ -172,6 +188,12 @@
         padding: 10px 0;
         border-radius: 2mm;
         cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+      .dates-item:hover {
+        background: #6bbf59;
+        transform: translateY(-5px);
+        color: white;
       }
       .day {
         font-size: 12px;
@@ -190,6 +212,12 @@
         background: rgb(233, 233, 233);
         border-radius: 2mm;
         cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+      .time:hover {
+        background: #6bbf59;
+        color: white;
+        transform: translateY(-5px);
       }
       .timings input:checked + label {
         background: rgb(28, 185, 120);
@@ -202,6 +230,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        border-top: 1px solid #ddd;
+        margin-top: 20px;
+        padding-top: 20px;
       }
       .total {
         display: flex;
@@ -210,10 +241,12 @@
         justify-content: center;
         font-size: 16px;
         font-weight: 500;
+        color: #2d2d2d;
       }
       .total span {
         font-size: 11px;
         font-weight: 400;
+        color: #888;
       }
       .price button {
         background: rgb(60, 60, 60);
@@ -225,6 +258,11 @@
         outline: none;
         border: none;
         cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+      .price button:hover {
+        background: #4caf50;
+        transform: translateY(-3px);
       }
     </style>
   </head>
@@ -233,7 +271,7 @@
       <div class="tickets">
         <div class="ticket-selector">
           <div class="head">
-            <div class="title">SLT intern seat reservation System</div>
+            <div class="title">SLT Intern Seat Reservation System</div>
           </div>
           <div class="seats">
             <div class="status">
@@ -284,12 +322,14 @@
                 <div class="date">17</div>
               </label>
             </div>
-
           </div>
         </div>
         <div class="price">
           <div class="total">
-
+            <span>Total Seats:</span>
+            <div class="count">0</div>
+            <span>Total Price:</span>
+            <div class="amount">0</div>
           </div>
           <button type="button">Book</button>
         </div>

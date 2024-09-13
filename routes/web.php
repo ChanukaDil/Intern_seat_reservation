@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'res'])->name('res');
+
 Route::get('login', [HomeController::class, 'login'])->name('login');
+Route::get('Aboutus', [HomeController::class, 'Aboutus'])->name('About');
 Route::get('/crud', [CrudController::class, 'index'])->name('crud');
 
 Route::prefix('/crud')->group(function () {

@@ -9,39 +9,28 @@ use App\Models\CRUD;
 
 class AuthController extends Controller
 {
-    // Show the login form
     public function showLoginForm()
     {
-        return view('login'); // Ensure this matches your view file
+        return view('login');
     }
 
-    // Process login request
+
     public function loginProcess(Request $request)
     {
-        // Validate the request data
         $request->validate([
             'username' => 'required|string',
             'password' => 'required|string',
         ]);
+        $user = CRUD::where('Username', $request->username)->first();
 
-        // Get credentials from the request
-        $credentials = $request->only('username', 'password');
+        if ($user && Hash::check($request->password, $user->password)) {
 
-        // Find the user by username in the CRUD table
-        $user =  CRUD::where('Username', $credentials['username'])->first();
-
-        // Check if the user exists and if the password is correct
-        if ($user && Hash::check($credentials['password'], $user->password)) {
-            // Log the user in
             Auth::login($user);
 
-            // Redirect to the intended page or 'res' route
-            return redirect()->intended('res');
+            return redirect()->intended('home');
         }
-
-        // If authentication fails, redirect back with an error message
         return redirect()->back()->withErrors([
             'loginError' => 'Invalid username or password.',
-        ])->withInput(); // Preserve input except for password
+        ])->withInput($request->except('password'));
     }
 }
