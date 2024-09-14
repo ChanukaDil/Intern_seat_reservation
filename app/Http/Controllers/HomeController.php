@@ -27,6 +27,10 @@ class HomeController extends Controller
 
         return view('Aboutus');
     }
+    public function payment(){
+
+        return view('payment');
+    }
 
 }
 
