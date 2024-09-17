@@ -1,12 +1,12 @@
-
 @extends('layouts.app')
 @section('content')
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Ticket Booking</title>
+
     <!--Google Fonts and Icons-->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
@@ -18,8 +18,9 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+
     <style>
-      body {
+       body {
         width: 100%;
         height: 100vh;
         margin: 0;
@@ -133,15 +134,17 @@
       }
       .all-seats {
         display: grid;
-        grid-template-columns: repeat(10, 1fr);
-        grid-gap: 15px;
+        grid-template-columns: repeat(8, 1fr);
+        grid-gap: 18px;
         margin: 60px 0;
         margin-top: 20px;
         position: relative;
+        font-size: 15px;
+        text-align: center;
       }
       .seat {
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
         background: white;
         border-radius: 0.5mm;
         outline: 0.3mm solid rgb(180, 180, 180);
@@ -189,17 +192,17 @@
         flex-direction: column;
         padding: 10px 0;
         border-radius: 2mm;
+        border: none;
         cursor: pointer;
         transition: background 0.3s ease, transform 0.3s ease;
+        font-size: 14px;
       }
       .dates-item:hover {
         background: #6bbf59;
         transform: translateY(-5px);
         color: white;
       }
-      .day {
-        font-size: 12px;
-      }
+      
       .times {
         width: 100%;
         display: flex;
@@ -267,113 +270,103 @@
         transform: translateY(-3px);
       }
     </style>
-  </head>
-  <body>
-    <div class="center">
-      <div class="tickets">
+
+</head>
+<body>
+<div class="center">
+    <div class="tickets">
         <div class="ticket-selector">
-          <div class="head">
-            <div class="title">SLT Intern Seat Reservation System</div>
-          </div>
-          <div class="seats">
-            <div class="status">
-              <div class="item">Available</div>
-              <div class="item">Booked</div>
-              <div class="item">Selected</div>
+            <div class="head">
+                <div class="title">SLT Intern Seat Reservation System</div>
             </div>
-            <div class="all-seats">
-              <input type="checkbox" name="tickets" id="s1" />
-              <label for="s1" class="seat booked"></label>
-            </div>
-          </div>
-          <div class="timings">
-            <div class="dates">
-              <input type="radio" name="date" id="d1" checked />
-              <label for="d1" class="dates-item">
-                <div class="day">Sun</div>
-                <div class="date">11</div>
-              </label>
-              <input type="radio" id="d2" name="date" />
-              <label class="dates-item" for="d2">
-                <div class="day">Mon</div>
-                <div class="date">12</div>
-              </label>
-              <input type="radio" id="d3" name="date" />
-              <label class="dates-item" for="d3">
-                <div class="day">Tue</div>
-                <div class="date">13</div>
-              </label>
-              <input type="radio" id="d4" name="date" />
-              <label class="dates-item" for="d4">
-                <div class="day">Wed</div>
-                <div class="date">14</div>
-              </label>
-              <input type="radio" id="d5" name="date" />
-              <label class="dates-item" for="d5">
-                <div class="day">Thu</div>
-                <div class="date">15</div>
-              </label>
-              <input type="radio" id="d6" name="date" />
-              <label class="dates-item" for="d6">
-                <div class="day">Fri</div>
-                <div class="date">16</div>
-              </label>
-              <input type="radio" id="d7" name="date" />
-              <label class="dates-item" for="d7">
-                <div class="day">Sat</div>
-                <div class="date">17</div>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="price">
-          <div class="total">
-            <span>Total Seats:</span>
-            <div class="count">0</div>
-            <span>Total Price:</span>
-            <div class="amount">0</div>
-          </div>
-          <button type="button">Book</button>
-        </div>
-      </div>
+            <div class="seats">
+                <div class="status">
+                    <div class="item">Available</div>
+                    <div class="item">Booked</div>
+                    <div class="item">Selected</div>
+                </div>
+
+                <div class="all-seats">
+                    @if(isset($seats) && $seats->isNotEmpty())
+                        @foreach($seats as $seat)
+                            <input type="radio" name="seat" id="{{ $seat->id }}" value="{{ $seat->id }}"
+                                   {{ $seat->booked ? 'disabled' : '' }}>
+                            <label for="{{ $seat->id }}" class="{{ $seat->booked ? 'seat booked' : 'seat' }}">
+                              {{ $seat->seat_number }}
+                            </label>
+                        @endforeach
+                    @else
+                        <p>No seats available for the selected date.</p>
+                    @endif
+                </div>
     </div>
-    <script>
-      let seats = document.querySelector(".all-seats");
-      for (var i = 0; i < 59; i++) {
-        let randint = Math.floor(Math.random() * 2);
-        let booked = randint === 1 ? "booked" : "";
-        seats.insertAdjacentHTML(
-          "beforeend",
-          '<input type="checkbox" name="tickets" id="s' +
-            (i + 2) +
-            '" /><label for="s' +
-            (i + 2) +
-            '" class="seat ' +
-            booked +
-            '"></label>'
-        );
-      }
 
-      let tickets = seats.querySelectorAll("input");
-      tickets.forEach((ticket) => {
-        ticket.addEventListener("change", () => {
-          let amount = document.querySelector(".amount").innerHTML;
-          let count = document.querySelector(".count").innerHTML;
-          amount = Number(amount);
-          count = Number(count);
+            @php
+            $date = $date ?? now()->format('Y-m-d');
+            @endphp
 
-          if (ticket.checked) {
-            count += 1;
-            amount += 200;
-          } else {
-            count -= 1;
-            amount -= 200;
-          }
-          document.querySelector(".amount").innerHTML = amount;
-          document.querySelector(".count").innerHTML = count;
+<div class="timings">
+    <div class="dates">
+        @for($i = 0; $i < 7; $i++)
+            <button 
+                type="button" 
+                class="dates-item" 
+                data-date="{{ now()->addDays($i)->format('Y-m-d') }}"
+                {{ $date == now()->addDays($i)->format('Y-m-d') ? 'data-selected="true"' : '' }}>
+                {{ now()->addDays($i)->format('D d') }}
+            </button>
+        @endfor
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.dates-item').forEach(button => {
+        button.addEventListener('click', function() {
+            const selectedDate = this.getAttribute('data-date');
+            // Redirect to the new date URL
+            window.location.href = `{{ route('seats.index') }}?date=${selectedDate}`;
         });
-      });
-    </script>
-  </body>
+    });
+</script>
+
+
+
+        </div>
+
+        
+
+        <div class="price">
+
+            <div class="total">
+                <span>Selected Seat Number:</span>
+                <div class="count"></div>
+            </div>
+
+
+            <form method="POST" action="{{ route('seats.book') }}">
+                @csrf
+                <input type="hidden" name="seat_id" id="seatId"/>
+                <button type="submit">Book</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    let seats = document.querySelectorAll("input[name='seat']");
+    let seatIdInput = document.getElementById('seatId');
+    let countElement = document.querySelector(".count");
+
+    seats.forEach((seat) => {
+        seat.addEventListener("change", function () {
+            if (this.checked) {
+                seatIdInput.value = this.value;
+                countElement.textContent = this.labels[0].textContent;
+            }
+        });
+    });
+</script>
+
+</body>
 </html>
 @endsection

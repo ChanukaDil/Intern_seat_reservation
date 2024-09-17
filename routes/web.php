@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CrudController;
+use App\Http\Controllers\SeatController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +21,8 @@ Route::prefix('/crud')->group(function () {
 });
 
 Route::post('loginProcess', [AuthController::class, 'loginProcess'])->name('loginProcess');
+
+Route::get('/seats', [SeatController::class, 'index'])->name('seats.index');
+Route::post('/seats/book', [SeatController::class, 'bookSeat'])->name('seats.book');
+
 
