@@ -19,9 +19,10 @@ class CrudController extends Controller
     }
     public function store(Request $request){
        $this ->task->create($request->all());
+       return redirect()->route('login')->with('success', 'Registration successful. Please log in.');
 
 
 
     }
-    
+
 }
