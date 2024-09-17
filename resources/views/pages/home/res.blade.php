@@ -47,6 +47,7 @@
         box-sizing: border-box;
         padding: 10px;
         font-family: poppins;
+        font-size: 15px;
         max-height: 96vh;
         overflow: auto;
         background: white;
@@ -275,6 +276,18 @@
 <body>
 <div class="center">
     <div class="tickets">
+
+     <!-- Display error messages if any -->
+     @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        
         <div class="ticket-selector">
             <div class="head">
                 <div class="title">SLT Intern Seat Reservation System</div>
