@@ -4,7 +4,6 @@
 &nbsp;<br/>
 <h1 class="text-center " style="background-color: #1d8b37; ">Reservation Table</h1>
 &nbsp;<br/>
-
 <table class="table table-hover">
     <thead>
       <tr style="background-color:rgb(188, 121, 121);">
@@ -37,9 +36,5 @@
   </table>
   &nbsp;<br/>
   &nbsp;<br/>
-
-
-
 </div>
-
-  @endsection
+ @endsection
