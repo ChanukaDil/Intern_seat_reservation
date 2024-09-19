@@ -31,6 +31,22 @@ class HomeController extends Controller
 
         return view('payment');
     }
+    public function Admin(){
+
+        return view('Admin');
+    }
+    public function Adminhome(){
+
+        return view('Adminhome');
+    }
+    public function Addseat(){
+
+        return view('Addseat');
+    }
+    public function ViewRes(){
+
+        return view('ViewRes');
+    }
 
 }
 

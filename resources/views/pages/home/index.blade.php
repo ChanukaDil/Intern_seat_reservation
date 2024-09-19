@@ -55,7 +55,27 @@
 
             </div>
         </div><br/><br/>
-       <br/><br/>
+
+       <div class="d-grid gap-3 col-10 mx-auto" style="background-image: url('Image13.jpg');background-size: ; background-position: center; height: 80vh;">
+        &nbsp;<br/>
+        &nbsp;<br/>
+        &nbsp;<br/>
+        &nbsp;<br/>
+        &nbsp;<br/>
+        &nbsp;<br/>
+
+        <button class="btn btn-primary btn-lg btn-block" type="button" onclick="window.location.href='{{ route('login') }}'">
+        Seat Reservation
+        </button>
+
+        <button class="btn btn-primary btn-lg btn-block" type="button" onclick="window.location.href='{{ route('Admin') }}'">Admin</button>
+        &nbsp;<br/>
+        &nbsp;<br/>
+        &nbsp;<br/>
+        &nbsp;<br/>
+        &nbsp;<br/>
+        &nbsp;<br/>
+      </div><br/><br/>
           <div class="card-group" style="background-color: white; ">
             <div class="card" style="background-color: black; color: white; ">
               <img class="card-img-top"  src="{{ asset('Image5.jpg') }}"alt="Card image cap">
@@ -93,6 +113,7 @@
           </div><br/><br/>
 
     </div>
+
 @endsection
 @push('css')
     <style>
@@ -101,5 +122,6 @@
             font-size : 4rem;
             color : red;
         }
+
     </style>
 @endpush

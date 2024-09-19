@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class SeatController extends Controller
+
 {
     public function index(Request $request)
     {
@@ -16,8 +17,8 @@ class SeatController extends Controller
 
         // Fetch seats for the selected date
         $seats = Seat::where('date', $date)->get();
-    
-        
+
+
         // Pass the seats and date to the view
         return view('pages.home.res', compact('seats', 'date'));
 

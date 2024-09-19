@@ -33,4 +33,25 @@ class AuthController extends Controller
             'loginError' => 'Invalid username or password.',
         ])->withInput($request->except('password'));
     }
+
+    public function AdminloginProcess(Request $request)
+    {
+
+        $request->validate([
+            'username' => 'required|string',
+            'password' => 'required|string',
+        ]);
+
+        if ($request->username === 'Admin' && $request->password === 'Admin123') {
+
+            session(['admin_logged_in' => true]);
+
+            return redirect()->intended('Adminhome');
+        }
+
+        return redirect()->back()->withErrors([
+            'loginError' => 'Invalid username or password.',
+        ])->withInput($request->except('password'));
+    }
+
 }
