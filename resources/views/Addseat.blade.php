@@ -12,14 +12,14 @@
     <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 </head>
 <body style="background-color: #333333;">
-    <div class="container mt-5" style="background-image: url('{{ asset('Image14.jpg') }}'); background-position: center;>
-
-        <form method="POST">
-         &nbsp;<br/>
-         &nbsp;<br/>
-         &nbsp;<br/>
-         &nbsp;<br/>
+    <div class="container mt-5" style="background-image: url('{{ asset('Image14.jpg') }}'); background-position: center;">
+        <form action="{{ route('seats.store') }}" method="POST">
             @csrf
+            &nbsp;<br/>
+            &nbsp;<br/>
+            &nbsp;<br/>
+            &nbsp;<br/>
+            &nbsp;<br/>
             <div class="mb-4">
                 <label class="form-label" for="numSeats"><b>Enter Number of Seats :</b></label>
                 <input type="number" id="numSeats" class="form-control form-control-lg" name="numSeats" required/>
@@ -29,18 +29,20 @@
                 <label class="form-label" for="datepicker"><b>Select Date :</b></label>
                 <input id="datepicker" class="form-control form-control-lg" name="reservationDate" required/>
             </div>
+
             <button type="submit" class="btn btn-primary btn-lg btn-block">Add Seats</button>
             &nbsp;<br/>
             &nbsp;<br/>
             &nbsp;<br/>
         </form>
-            &nbsp;<br/>
-            &nbsp;<br/>
-            &nbsp;<br/>
+        &nbsp;<br/>
+        &nbsp;<br/>
+        &nbsp;<br/>
     </div>
-           &nbsp;<br/>
-           &nbsp;<br/>
-           &nbsp;<br/>
+       &nbsp;<br/>
+       &nbsp;<br/>
+       &nbsp;<br/>
+
     <script>
         $('#datepicker').datepicker({
             uiLibrary: 'bootstrap5',

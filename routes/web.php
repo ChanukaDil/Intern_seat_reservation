@@ -31,5 +31,6 @@ Route::post('AdminloginProcess', [AuthController::class, 'AdminloginProcess'])->
 
 Route::get('/seats', [SeatController::class, 'index'])->name('seats.index');
 Route::post('/seats/book', [SeatController::class, 'bookSeat'])->name('seats.book');
+Route::post('/seats', [SeatController::class, 'store'])->name('seats.store');
 
 

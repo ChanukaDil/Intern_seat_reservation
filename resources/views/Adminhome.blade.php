@@ -3,8 +3,7 @@
 
 <section class="vh-100"  style="background-color: black;">
     &nbsp;<br/>
-    &nbsp;<br/>
-    <div class="d-grid gap-3 col-10 mx-auto" style="background-image: url('Image13.jpg');background-size: ; background-position: center; height: 100vh;">
+    <div class="d-grid gap-3 col-10 mx-auto" style="background-image: url('Image13.jpg');background-size: ; background-position: center; height: 100vh;" >
         &nbsp;<br/>
         &nbsp;<br/>
         &nbsp;<br/>
@@ -30,4 +29,6 @@
 
 </section>
 @endsection
+&nbsp;<br/>
+ &nbsp;<br/>
 

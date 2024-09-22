@@ -45,4 +45,33 @@ class SeatController extends Controller
 
         return back()->with('success', 'Seat booked successfully');
     }
+
+    public function store(Request $request)
+    {
+
+        $validated = $request->validate([
+            'numSeats' => 'required|integer|min:1',
+            'reservationDate' => 'required|date',
+        ]);
+
+
+        $numSeats = $validated['numSeats'];
+        $reservationDate = $validated['reservationDate'];
+
+
+        for ($i = 1; $i <= $numSeats; $i++) {
+
+            $seatNumber = 'A' . $i;
+
+
+            Seat::create([
+                'seat_number' => $seatNumber,
+                'date' => $reservationDate,
+                'booked' => false,
+                'user_id' => null,
+            ]);
+        }
+
+        return redirect()->back()->with('success', 'Seats added successfully!');
+    }
 }
