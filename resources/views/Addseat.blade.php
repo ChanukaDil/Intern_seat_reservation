@@ -48,7 +48,13 @@
             uiLibrary: 'bootstrap5',
             format: 'yyyy-mm-dd'
         });
+
+        // Check for session success message
+        @if(session('success'))
+            alert('{{ session('success') }}');
+        @endif
     </script>
 </body>
 </html>
 @endsection
+
