@@ -1,182 +1,102 @@
-<!-- Footer -->
-<footer class="bg-dark text-center text-light ">
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="container my-5">
+
+    <footer class="text-white text-center text-lg-start bg-primary">
     <!-- Grid container -->
     <div class="container p-4">
+      <!--Grid row-->
+      <div class="row mt-4">
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">About company</h5>
 
-      <!-- Section: Social media -->
-      <section class="mb-4">
-        <!-- Facebook -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+          <p>
+            Sri Lanka Telecom Mobitel, a subsidiary of Sri Lanka Telecom,
+             is a leading mobile service provider in the country. Established in 1993,
+              Mobitel offers a wide range of services including voice, data, broadband,
+               and value-added services. It was the first in Sri Lanka to launch 4G LTE and
+               is 5G-ready, continuously investing in cutting-edge technology. Mobitel's digital
+               innovations include mobile banking through mCash and e-learning platforms.
+               Known for its strong network coverage and customer focus, Mobitel also engages
+               in extensive corporate social responsibility efforts, supporting education, health,
+                and rural development initiatives across Sri Lanka.
+          </p>
 
-        <!-- Twitter -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-
-        <!-- Google -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href="#!" role="button"><i class="fab fa-google"></i></a>
-
-        <!-- Instagram -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-
-        <!-- Linkedin -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
-        <!-- Github -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="#!" role="button"><i class="fab fa-github"></i></a>
-      </section>
-      <!-- Section: Social media -->
-
-
-      <!-- Section: Form -->
-      <section class="">
-        <form action="">
-          <!--Grid row-->
-          <div class="row d-flex justify-content-center">
-            <!--Grid column-->
-            <div class="col-auto">
-              <p class="pt-2">
-                <strong>Sign up for our newsletter</strong>
-              </p>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-md-5 col-12">
-              <!-- Email input -->
-              <div class="form-outline mb-4">
-                <input type="email" id="form5Example2" class="form-control" />
-                <label class="form-label" for="form5Example2">Email address</label>
-              </div>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-auto">
-
-              <!-- Submit button -->
-              <button type="submit" class="btn btn-primary mb-4">
-                Subscribe
-              </button>
-            </div>
-            <!--Grid column-->
+          <div class="mt-4">
+            <!-- Facebook -->
+            <a type="button" class="btn btn-floating btn-primary btn-lg"><i class="fab fa-facebook-f"></i></a>
+            <!-- Dribbble -->
+            <a type="button" class="btn btn-floating btn-primary btn-lg"><i class="fab fa-dribbble"></i></a>
+            <!-- Twitter -->
+            <a type="button" class="btn btn-floating btn-primary btn-lg"><i class="fab fa-twitter"></i></a>
+            <!-- Google + -->
+            <a type="button" class="btn btn-floating btn-primary btn-lg"><i class="fab fa-google-plus-g"></i></a>
+            <!-- Linkedin -->
           </div>
-          <!--Grid row-->
-        </form>
-      </section>
-      <!-- Section: Form -->
-
-
-      <!-- Section: Text -->
-      <section class="mb-4">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-          distinctio earum repellat quaerat voluptatibus placeat nam,
-          commodi optio pariatur est quia magnam eum harum corrupti dicta,
-          aliquam sequi voluptate quas.
-        </p>
-      </section>
-      <!-- Section: Text -->
-
-
-      <!-- Section: Links -->
-      <section class="">
-        <!--Grid row-->
-        <div class="row">
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-dark">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-dark">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-dark">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-dark">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-dark">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
         </div>
-        <!--Grid row-->
-      </section>
-      <!-- Section: Links -->
+        <!--Grid column-->
 
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4 pb-1">Search something</h5>
+
+          <div class="form-outline form-white mb-4">
+            <input type="text" id="formControlLg" class="form-control form-control-lg" />
+            <label class="form-label" for="formControlLg">Search</label>
+          </div>
+
+          <ul class="fa-ul" style="margin-left: 1.65em;">
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Sri Lanka Telecom PLC
+                Lotus Road, P.O.Box &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 503,
+                Colombo 01,
+                Sri Lanka.</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">   pr@slt.lk</span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2"> +94 112 12 12 12 </span>
+            </li>
+            <li class="mb-3">
+              <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2"> +94 112 12 12 13 </span>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-4">Opening hours</h5>
+
+          <table class="table text-center text-white">
+            <tbody class="font-weight-normal">
+              <tr>
+                <td>Mon - Fri:</td>
+                <td>8.00 AM - 5.30 PM</td>
+              </tr>
+              <tr>
+                <td>Fri - Sat:</td>
+                <td>8.00 AM - 1.00 PM</td>
+              </tr>
+              <tr>
+                <td>Sunday:</td>
+                <td>Closed</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
     </div>
     <!-- Grid container -->
 
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-      © 2020 Copyright:
-      <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     </div>
     <!-- Copyright -->
-
   </footer>
-  <!-- Footer -->
+
+</div>
+<!-- End of .container -->

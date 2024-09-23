@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container"   >
         <div class="raw">
             <div class="col-lg-12 text-center">
                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -110,7 +110,7 @@
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
             </div>
-          </div><br/><br/>
+          </div><br/>
 
     </div>
 

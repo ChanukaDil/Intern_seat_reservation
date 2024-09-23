@@ -6,7 +6,7 @@
     <title>@yield('title', 'CRUD')</title>
     @include('library.styles')
 </head>
-<body bg-dark>
+<body  style="background-color: #333;">
     @include('components\nav')
 
 

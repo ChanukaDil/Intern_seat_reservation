@@ -12,17 +12,13 @@ class SeatController extends Controller
 {
     public function index(Request $request)
     {
-        // Get selected date or default to today's date
         $date = $request->input('date', now()->format('Y-m-d'));
 
-        // Fetch seats for the selected date
         $seats = Seat::where('date', $date)->get();
 
-
-        // Pass the seats and date to the view
         return view('pages.home.res', compact('seats', 'date'));
 
-        dd($seats); // Add this line
+        dd($seats);
 
     }
 
@@ -48,22 +44,16 @@ class SeatController extends Controller
 
     public function store(Request $request)
     {
-
         $validated = $request->validate([
             'numSeats' => 'required|integer|min:1',
             'reservationDate' => 'required|date',
         ]);
 
-
         $numSeats = $validated['numSeats'];
         $reservationDate = $validated['reservationDate'];
-
-
         for ($i = 1; $i <= $numSeats; $i++) {
 
             $seatNumber = 'A' . $i;
-
-
             Seat::create([
                 'seat_number' => $seatNumber,
                 'date' => $reservationDate,
@@ -71,7 +61,6 @@ class SeatController extends Controller
                 'user_id' => null,
             ]);
         }
-
         return redirect()->back()->with('success', 'Seats added successfully!');
     }
 }
