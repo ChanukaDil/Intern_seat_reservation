@@ -16,7 +16,7 @@
         Add Seats
         </button>
 
-        <button class="btn btn-primary btn-lg btn-block" type="button" onclick="window.location.href='{{ route('ViewRes') }}'">View Reservations</button>
+        <a href="{{ route('booked.seats') }}" class="btn btn-primary">View Booked Seats</a>
         &nbsp;<br/>
         &nbsp;<br/>
         &nbsp;<br/>

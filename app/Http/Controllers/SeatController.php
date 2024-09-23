@@ -63,4 +63,16 @@ class SeatController extends Controller
         }
         return redirect()->back()->with('success', 'Seats added successfully!');
     }
+    public function viewuser(){
+
+        return view('viewuser');
+    }
+    public function viewBookedSeats(Request $request)
+{
+    // Fetch booked seats (where 'booked' is true)
+    $bookedSeats = Seat::where('booked', true)->get();
+
+    // Return the view and pass the data
+    return view('viewuser', compact('bookedSeats'));
+}
 }
