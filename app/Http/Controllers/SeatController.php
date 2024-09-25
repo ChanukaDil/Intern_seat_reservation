@@ -69,10 +69,9 @@ class SeatController extends Controller
     }
     public function viewBookedSeats(Request $request)
 {
-    // Fetch booked seats (where 'booked' is true)
+
     $bookedSeats = Seat::where('booked', true)->get();
 
-    // Return the view and pass the data
     return view('viewuser', compact('bookedSeats'));
 }
 }

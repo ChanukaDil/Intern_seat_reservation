@@ -30,7 +30,10 @@
                 <input id="datepicker" class="form-control form-control-lg" name="reservationDate" required/>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Add Seats</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Add Seats</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-primary btn-lg btn-block" type="button" onclick="window.location.href='{{ route('Adminhome') }}'">
+                back
+                </button>
             &nbsp;<br/>
             &nbsp;<br/>
             &nbsp;<br/>

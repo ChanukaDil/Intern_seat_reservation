@@ -6,8 +6,6 @@ use App\Http\Controllers\SeatController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
-
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'res'])->name('res');
 
@@ -19,7 +17,6 @@ Route::get('/crud', [CrudController::class, 'index'])->name('crud');
 Route::get('Adminhome', [HomeController::class, 'Adminhome'])->name('Adminhome');
 Route::get('Addseat', [HomeController::class, 'Addseat'])->name('Addseat');
 Route::get('ViewRes', [HomeController::class, 'ViewRes'])->name('ViewRes');
-
 
 Route::prefix('/crud')->group(function () {
     Route::get('/', [CrudController::class, 'index'])->name('crud');

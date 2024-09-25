@@ -30,6 +30,9 @@
       @endif
     </tbody>
   </table>
+  <button class="btn btn-primary btn-lg btn-block" type="button" onclick="window.location.href='{{ route('res') }}'">
+    back
+    </button>
 &nbsp;<br/>
 &nbsp;<br/>
 </div>

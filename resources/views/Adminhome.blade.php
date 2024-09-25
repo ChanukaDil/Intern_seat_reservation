@@ -16,7 +16,10 @@
         Add Seats
         </button>
 
-        <a href="{{ route('booked.seats') }}" class="btn btn-primary">View Booked Seats</a>
+        <button class="btn btn-primary btn-lg btn-block" type="button" onclick="window.location.href='{{ route('booked.seats') }}'">
+            View Booked Seats
+        </button>
+
         &nbsp;<br/>
         &nbsp;<br/>
         &nbsp;<br/>
