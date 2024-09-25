@@ -74,4 +74,8 @@ class SeatController extends Controller
 
     return view('viewuser', compact('bookedSeats'));
 }
+public function Attendance(){
+
+    return view('Attendance');
+}
 }

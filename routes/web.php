@@ -31,4 +31,6 @@ Route::post('/seats/book', [SeatController::class, 'bookSeat'])->name('seats.boo
 Route::post('/seats', [SeatController::class, 'store'])->name('seats.store');
 Route::get('viewuser', [SeatController::class, 'viewuser'])->name('viewuser');
 Route::get('/booked-seats', [SeatController::class, 'viewBookedSeats'])->name('booked.seats');
+Route::get('Attendance', [SeatController::class, 'Attendance'])->name('Attendance');
+
 
