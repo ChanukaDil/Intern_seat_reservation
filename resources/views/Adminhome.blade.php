@@ -20,7 +20,7 @@
             View Booked Seats
         </button>
 
-        <button class="btn btn-primary btn-lg btn-block" type="button" onclick="window.location.href='{{ route('Attendance') }}'">
+        <button class="btn btn-primary btn-lg btn-block" type="button" onclick="window.location.href='{{ route('attendance.index') }}'">
             Attendance
         </button>
 

@@ -47,7 +47,10 @@ class HomeController extends Controller
 
         return view('ViewRes');
     }
+    public function Viewattendance(){
 
+        return view('Viewattendance');
+    }
 }
 
 

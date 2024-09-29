@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\SeatController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AttendanceController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -31,6 +32,9 @@ Route::post('/seats/book', [SeatController::class, 'bookSeat'])->name('seats.boo
 Route::post('/seats', [SeatController::class, 'store'])->name('seats.store');
 Route::get('viewuser', [SeatController::class, 'viewuser'])->name('viewuser');
 Route::get('/booked-seats', [SeatController::class, 'viewBookedSeats'])->name('booked.seats');
-Route::get('Attendance', [SeatController::class, 'Attendance'])->name('Attendance');
 
-
+Route::post('/store', [AttendanceController::class, 'store'])->name('attendance.store');
+Route::get('/attendance', [AttendanceController::class, 'index'])->name('attendance.index');
+Route::get('Viewattendance', [HomeController::class, 'Viewattendance'])->name('Viewattendance');
+Route::post('/attendance/search', [AttendanceController::class, 'search'])->name('search');
+Route::get('Adminhome', [HomeController::class, 'Adminhome'])->name('Adminhome');
