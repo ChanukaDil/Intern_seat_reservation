@@ -38,3 +38,4 @@ Route::get('/attendance', [AttendanceController::class, 'index'])->name('attenda
 Route::get('Viewattendance', [HomeController::class, 'Viewattendance'])->name('Viewattendance');
 Route::post('/attendance/search', [AttendanceController::class, 'search'])->name('search');
 Route::get('Adminhome', [HomeController::class, 'Adminhome'])->name('Adminhome');
+

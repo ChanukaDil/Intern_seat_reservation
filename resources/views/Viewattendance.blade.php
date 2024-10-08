@@ -2,7 +2,10 @@
 @extends('layouts.app1')
 
 @section('content')
-<form class="row domain-search bg-pblue" action="{{ route('search') }}" method="POST">
+<div style="background-color: #1d8b37; ">
+</br>
+</br></br></br></br>
+<form class="px-md-2" action="{{ route('search') }}" method="POST">
     @csrf
     <div class="container">
         <div class="row">
@@ -13,13 +16,17 @@
                 <div class="input-group">
                     <input type="date" name="date" class="form-control" required>
                     <span class="input-group-addon">
-                        <input type="submit" value="Search" class="btn btn-primary">
+                       &nbsp;&nbsp;<input type="submit" value="Search" class="btn btn-primary">
                     </span>
                 </div>
             </div>
         </div>
     </div>
+
+</br>
+</br></br></br></br></br>
 </form>
+</div>
 </br>
 @endsection
 
