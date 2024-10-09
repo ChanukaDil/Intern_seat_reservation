@@ -67,13 +67,65 @@ class SeatController extends Controller
 
         return view('viewuser');
     }
-    public function viewBookedSeats(Request $request)
-{
+
+    public function viewBookedSeats(Request $request){
 
     $bookedSeats = Seat::where('booked', true)->get();
 
     return view('viewuser', compact('bookedSeats'));
 }
+
+
+public function viewBookedLoggedUserSeats(Request $request)
+{
+    // Get the logged-in user's ID
+    $userId = auth()->id();
+    
+    // Get the current date (today)
+    $currentDate = now()->toDateString();
+    
+    // Retrieve only the seats booked by the logged-in user for today or future dates
+    $bookedSeats = Seat::where('booked', true)
+                       ->where('user_id', $userId)
+                       ->where('date', '>=', $currentDate)  // Filter for future dates including today
+                       ->get();
+
+    return view('viewUserBookedSeats', compact('bookedSeats'));
+}
+
+public function cancelSeatReservation(Request $request, $seatId)
+{
+    // Get the logged-in user's ID
+    $userId = auth()->id();
+
+    // Find the seat by its ID and check if it belongs to the logged-in user
+    $seat = Seat::where('id', $seatId)
+                ->where('user_id', $userId)
+                ->first();
+
+    if (!$seat) {
+        return back()->with('error', 'You do not have permission to cancel this reservation.');
+    }
+
+    // Get the current date and time
+    $currentDate = now()->toDateString();
+    $currentTime = now()->toTimeString();
+
+    // Check if the reservation is for the future or today before 6:00 AM
+    if ($seat->date > $currentDate || ($seat->date == $currentDate && $currentTime < '06:00:00')) {
+        // Cancel the reservation by setting user_id to NULL
+        $seat->user_id = null;
+        $seat->booked = false;
+        $seat->save();
+
+        return back()->with('success', 'Your seat reservation has been successfully canceled.');
+    }
+
+    return back()->with('error', 'You can only cancel today\'s reservations before 6:00 AM.');
+}
+
+
+
 public function Attendance(){
 
     return view('Attendance');

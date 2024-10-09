@@ -357,7 +357,7 @@
             <form method="POST" action="{{ route('seats.book') }}">
                 @csrf
                 <input type="hidden" name="seat_id" id="seatId"/>
-                <a href="{{ route('booked.seats') }}" class="btn btn-primary">View Booked Seats</a>
+                <a href="{{ route('userbooked.seats') }}" class="btn btn-primary">View Booked Seats</a>
                 <button type="submit">Book</button>
             </form>
         </div>
