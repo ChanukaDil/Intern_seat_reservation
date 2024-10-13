@@ -43,8 +43,7 @@
         &nbsp;<br/>
     </div>
        &nbsp;<br/>
-       &nbsp;<br/>
-       &nbsp;<br/>
+
 
     <script>
         $('#datepicker').datepicker({

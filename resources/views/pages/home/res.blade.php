@@ -6,8 +6,6 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Ticket Booking</title>
-
-    <!--Google Fonts and Icons-->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
       rel="stylesheet"
@@ -203,7 +201,7 @@
         transform: translateY(-5px);
         color: white;
       }
-      
+
       .times {
         width: 100%;
         display: flex;
@@ -287,7 +285,7 @@
                 </ul>
             </div>
         @endif
-        
+
         <div class="ticket-selector">
             <div class="head">
                 <div class="title">SLT Intern Seat Reservation System</div>
@@ -321,9 +319,9 @@
 <div class="timings">
     <div class="dates">
         @for($i = 0; $i < 7; $i++)
-            <button 
-                type="button" 
-                class="dates-item" 
+            <button
+                type="button"
+                class="dates-item"
                 data-date="{{ now()->addDays($i)->format('Y-m-d') }}"
                 {{ $date == now()->addDays($i)->format('Y-m-d') ? 'data-selected="true"' : '' }}>
                 {{ now()->addDays($i)->format('D d') }}
@@ -346,7 +344,7 @@
 
         </div>
 
-        
+
 
         <div class="price">
 
@@ -359,7 +357,7 @@
             <form method="POST" action="{{ route('seats.book') }}">
                 @csrf
                 <input type="hidden" name="seat_id" id="seatId"/>
-                <a href="{{ route('booked.seats') }}" class="btn btn-primary">View Booked Seats</a>
+                <a href="{{ route('userbooked.seats') }}" class="btn btn-primary">View Booked Seats</a>
                 <button type="submit">Book</button>
             </form>
         </div>

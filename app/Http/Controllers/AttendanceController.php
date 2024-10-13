@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Attendance;
 use App\Models\Crud;
+use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Support\Facades\Mail;
+
 
 class AttendanceController extends Controller
 {
@@ -50,4 +53,6 @@ public function search(Request $request)
         // Return the search view with attendance records and the date
         return view('search', compact('attendances', 'date'));
     }
+
+
 }

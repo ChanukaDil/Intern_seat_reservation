@@ -1,127 +1,176 @@
-@extends('layouts.app')
+@extends('layouts.app2')
 
-@section('content')
-    <div class="container"   >
-        <div class="raw">
-            <div class="col-lg-12 text-center">
-               <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="{{ asset('Image1.jpg') }}" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Collaborative and Supportive Culture</h5>
-                      <p>A good office environment fosters collaboration and teamwork,
-                         where employees feel supported by their colleagues and management.
-                          Open communication, mutual respect, and a willingness to help one
-                           another contribute to a positive atmosphere.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="{{ asset('Image2.jpg') }}" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5> Comfortable and Functional Workspace</h5>
-                      <p>The physical setup of the office plays a significant role in productivity
-                         and well-being. A well-designed office is clean, comfortable, and equipped
-                          with the necessary tools and technology. Ergonomic furniture, adequate lighting,
-                           and a quiet workspace help employees stay focused and comfortable.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <img src="{{ asset('Image3.jpg') }}" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Opportunities for Growth and Development</h5>
-                      <p>An environment that encourages professional growth and development
-                        is essential for employee satisfaction. Offering training programs,
-                        career advancement opportunities, and regular feedback helps employees
-                        feel valued and motivated to contribute to the organization’s success.</p>
-                    </div>
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-
-
-            </div>
-        </div><br/><br/>
-
-       <div class="d-grid gap-3 col-10 mx-auto" style="background-image: url('Image13.jpg');background-size: ; background-position: center; height: 80vh;">
-        &nbsp;<br/>
-        &nbsp;<br/>
-        &nbsp;<br/>
-        &nbsp;<br/>
-        &nbsp;<br/>
-        &nbsp;<br/>
-
-        <button class="btn btn-primary btn-lg btn-block" type="button" onclick="window.location.href='{{ route('login') }}'">
-        Seat Reservation
-        </button>
-
-        <button class="btn btn-primary btn-lg btn-block" type="button" onclick="window.location.href='{{ route('Admin') }}'">Admin</button>
-        &nbsp;<br/>
-        &nbsp;<br/>
-        &nbsp;<br/>
-        &nbsp;<br/>
-        &nbsp;<br/>
-        &nbsp;<br/>
-      </div><br/><br/>
-          <div class="card-group" style="background-color: white; ">
-            <div class="card" style="background-color: black; color: white; ">
-              <img class="card-img-top"  src="{{ asset('Image5.jpg') }}"alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Comfort and Ergonomics</h5>
-                <p class="card-text">A well-designed office prioritizes comfort and ergonomics.
-                    This includes adjustable chairs, proper desk heights, and adequate lighting to
-                     reduce strain and prevent injury. A comfortable workspace enhances productivity
-                      and employee satisfaction.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>&nbsp;&nbsp;&nbsp;
-            <div class="card" style="background-color: black; color: white;">
-              <img class="card-img-top"  src="{{ asset('Image6.jpg') }}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Effective Layout and Design</h5>
-                <p class="card-text">A good office has a layout that promotes collaboration and efficiency.
-                     This often means open spaces for teamwork, private areas for focused work, and clear,
-                      organized areas for different tasks. Thoughtful design also includes good acoustics
-                      and ventilation to maintain a pleasant atmosphere.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>&nbsp;&nbsp;&nbsp;
-            <div class="card" style="background-color: black; color: white;">
-              <img class="card-img-top"  src="{{ asset('Image7.jpg') }}" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Amenities and Resources</h5>
-                <p class="card-text">Access to essential amenities and resources is crucial. This
-                    includes high-speed internet, modern technology, meeting rooms, kitchen facilities,
-                     and relaxation areas. Providing these resources helps employees perform their tasks
-                      effectively and maintains their well-being.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div><br/>
-
-    </div>
-
-@endsection
-@push('css')
+<header>
     <style>
-        .title{
-            padding-top : 8vh;
-            font-size : 4rem;
-            color : red;
+      #intro {
+        background-image: url("Image13.jpg");
+        height: 100vh;
+      }
+      @media (min-width: 992px) {
+        #intro {
+          margin-top: -58.59px;
         }
+      }
 
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+      .custom-btn {
+        width: 500px;
+    }
     </style>
-@endpush
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="{{ route('home') }}">
+        <img src="{{ asset('logo.png') }}" alt="Home" style="height: 60px; width: 80px;">
+    </a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ route('crud') }}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('login') }}" >Login</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{ route('About') }}" >About Us</a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{{ route('payment') }}" >Payment</a>
+            </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+    <div id="intro" class="bg-image shadow-2-strong">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
+        <div class="container d-flex align-items-center justify-content-center text-center h-100">
+          <div class="text-white" data-mdb-theme="dark">
+            <h1 class="mb-3">SLT Mobitel </h1>
+            <h5 class="mb-4"> Intern Seat Reservation System for efficient seat booking</h5>
+            <div class="text-center">
+                <button class="btn btn-primary btn-lg custom-btn mb-3" type="button" onclick="window.location.href='{{ route('login') }}'">
+                    Seat Reservation
+                </button>
+                <br/>
+                <button class="btn btn-primary btn-lg custom-btn" type="button" onclick="window.location.href='{{ route('Admin') }}'">
+                    Admin
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="mt-5">
+    <div class="container">
+      <section>
+        <div class="row">
+          <div class="col-md-6 gx-5 mb-4">
+            <div class="bg-image hover-overlay shadow-2-strong" data-mdb-ripple-init data-mdb-ripple-color="light">
+              <img src="Image4.jpg" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-6 gx-5 mb-4">
+            <h4 style="color: white;"><strong>Advance Booking</strong></h4>
+            <p  style="color: white;">
+                Advance booking allows users to reserve seats
+                before the actual time of use, ensuring their spot
+                is secured. Commonly used in offices, transportation,
+                 cinemas, and event venues, this system eliminates uncertainty
+                  about seat availability and helps users plan their schedules
+                  more efficiently.
+            </p>
+            <p style="color: white;"><strong>Availability Management</strong></p>
+            <p  style="color: white;">
+                Availability management in a seat reservation system displays which
+                 seats are currently available for booking, ensuring a user-friendly
+                 experience. It features real-time updates to reflect the latest availability,
+                  a user-friendly interface with color coding for easy identification of available
+                   and booked seats, and search and filter options for specific criteria like location
+                   or amenities. This system aids administrators in capacity planning, helping optimize
+                   space usage and resource allocation while minimizing the risk of double-booking. Additionally,
+                    some systems allow users to view their booking history, making it easier to reserve their preferred
+                    seats in the future.
+            </p>
+          </div>
+        </div>
+      </section>
+      <hr class="my-5" />
+      <section class="text-center">
+        <h2 style="color: white;"><strong>Our Services</strong></h2></br></br>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-12 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+                <img src="Image1.jpg" class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Fair Allocation</h5>
+                <p class="card-text">
+                    Fair allocation ensures equitable distribution of available seats among users,
+                    promoting accessibility and preventing favoritism in reservations and bookings.
+                </p>
+                <a href="#!" class="btn btn-primary" data-mdb-ripple-init>See more</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+                <img src="Image5.jpg" class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Reduces Overcrowding</h5>
+                <p class="card-text">
+                    Reduces overcrowding by managing seat availability, preventing excessive bookings,
+                     and ensuring a comfortable environment for users in shared spaces.
+                </p>
+                <a href="#!" class="btn btn-primary" data-mdb-ripple-init>See more</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card">
+              <div class="bg-image hover-overlay" data-mdb-ripple-init data-mdb-ripple-color="light">
+                <img src="Image7.jpg" class="img-fluid" />
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Workspace Organization</h5>
+                <p class="card-text">
+                    Workspace organization optimizes seating arrangements, enhances productivity,
+                    and fosters collaboration by effectively managing available seats in shared environments.
+                </p>
+                <a href="#!" class="btn btn-primary" data-mdb-ripple-init>See more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr class="my-5" />
+    </div>
+  </main>
+
