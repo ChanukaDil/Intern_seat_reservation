@@ -1,10 +1,4 @@
-
-@extends('layouts.app1')
-
-@section('content')
-<div style="background-color: #1d8b37;">
-    </br></br></br></br></br>
-    <form class="px-md-2" action="{{ route('search') }}" method="POST">
+<form class="px-md-2" action="{{ route('search') }}" method="POST">
         @csrf
         <div class="container">
             <div class="row">
