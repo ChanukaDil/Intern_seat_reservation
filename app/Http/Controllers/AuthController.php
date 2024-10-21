@@ -14,7 +14,6 @@ class AuthController extends Controller
         return view('login');
     }
 
-
     public function loginProcess(Request $request)
 {
 

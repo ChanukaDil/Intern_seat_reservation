@@ -6,6 +6,7 @@ use App\Http\Controllers\SeatController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AttendanceController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FacebookController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'res'])->name('res');
@@ -41,4 +42,10 @@ Route::get('/attendance', [AttendanceController::class, 'index'])->name('attenda
 Route::get('Viewattendance', [HomeController::class, 'Viewattendance'])->name('Viewattendance');
 Route::post('/attendance/search', [AttendanceController::class, 'search'])->name('search');
 Route::get('Adminhome', [HomeController::class, 'Adminhome'])->name('Adminhome');
+Route::get('auth/facebook', [LoginController::class, 'redirectToFacebook'])->name('facebook.login');
+Route::get('auth/facebook/callback', [LoginController::class, 'handleFacebookCallback']);
+
+
+Route::get('auth/facebook', [FacebookController::class, 'facebookpage'])->name('auth.facebook');
+Route::get('auth/facebook/callback', [FacebookController::class, 'handleFacebookCallback']);
 
