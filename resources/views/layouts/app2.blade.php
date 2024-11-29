@@ -13,6 +13,6 @@
     @yield('content')
 
     @include('library.scripts')
-    @include('components\footer')
+    <!-- @include('components\footer') -->
 </body>
 </html>
