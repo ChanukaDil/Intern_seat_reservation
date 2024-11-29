@@ -1,7 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy PHP app to Azure Web App - seatbooking-laravel-app
+name: Build and deploy Laravel to Azure Web App - laravel-seat-booking-webapp
 
 on:
   push:
@@ -27,11 +24,17 @@ jobs:
         with:
           files: 'composer.json'
 
+      - name: Install Dedepncencies
+        if: steps.check_files.outputs.files_exists == 'true'
+        run: 
+          php --version
+          composer config "http-basic.nova.laravel.com" "${{ secrets.NOVA_USER }}" "${{ secrets.NOVA_KEY }}"
+
       - name: Run composer install if composer.json exists
         if: steps.check_files.outputs.files_exists == 'true'
-        run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
+        run: composer validate --no-check-publish && composer install --prefer-dist --no-progress 
 
-      - name: Zip artifact for deployment
+      - name: Zip application files
         run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment job
@@ -46,9 +49,7 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    permissions:
-      id-token: write #This is required for requesting the JWT
-
+    
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
@@ -58,18 +59,11 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
       
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_825EF88386C044B2BE9BFD773799DE40 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A634B7DAC08A487F80F906FBEFD3887F }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8D2AFB2267D5461E889D84A45888D200 }}
-
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'seatbooking-laravel-app'
+          app-name: 'laravel-seat-booking-webapp'
           slot-name: 'Production'
           package: .
-          
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile }}
