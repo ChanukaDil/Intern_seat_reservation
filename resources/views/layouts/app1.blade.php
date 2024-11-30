@@ -7,12 +7,12 @@
     @include('library.styles')
 </head>
 <body  style="background-color: #333;">
-    @include('components\nav1')
+    @include('components.nav1')
 
 
     @yield('content')
 
     @include('library.scripts')
-    @include('components\footer')
+    @include('components.footer')
 </body>
 </html>
