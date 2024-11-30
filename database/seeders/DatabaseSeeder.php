@@ -11,10 +11,11 @@ class DatabaseSeeder extends Seeder
     
     public function run(): void
     {
-        $faker = Faker::create(); // Initialize Faker
+        // $faker = Faker::create(); // Initialize Faker
 
         // Example: Creating 10 random users
         for ($i = 0; $i < 10; $i++) {
+            $faker = Faker::create(); // Initialize Faker
             User::create([
                 'name' => $faker->name,
                 'email' => $faker->unique()->safeEmail,
@@ -22,10 +23,10 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        // Creating a specific user
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // // Creating a specific user
+        // User::factory()->create([
+        //     'name' => 'Test User',
+        //     'email' => 'test@example.com',
+        // ]);
     }
 }
