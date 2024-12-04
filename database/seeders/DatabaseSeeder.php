@@ -4,29 +4,36 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
 {
-    
+    /**
+     * Seed the application's database.
+     */
     public function run(): void
     {
-        // $faker = Faker::create(); // Initialize Faker
+        // Array of hardcoded user data
+        $users = [
+            [
+                'name' => 'John Doe',
+                'email' => 'johndoe@example.com',
+                'password' => bcrypt('password123'), // Use bcrypt for hashing passwords
+            ],
+            [
+                'name' => 'Jane Smith',
+                'email' => 'janesmith@example.com',
+                'password' => bcrypt('securepass456'),
+            ],
+            [
+                'name' => 'Bob Johnson',
+                'email' => 'bobjohnson@example.com',
+                'password' => bcrypt('mypassword789'),
+            ],
+        ];
 
-        // Example: Creating 10 random users
-        for ($i = 0; $i < 10; $i++) {
-            $faker = Faker::create(); // Initialize Faker
-            User::create([
-                'name' => $faker->name,
-                'email' => $faker->unique()->safeEmail,
-                'password' => bcrypt('password'), // Example hashed password
-            ]);
+        // Loop through each user and create them in the database
+        foreach ($users as $user) {
+            User::create($user);
         }
-
-        // // Creating a specific user
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }
